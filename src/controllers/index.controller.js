@@ -1,9 +1,3 @@
-/**
- * Returns API metadata for the Mini Shop backend.
- *
- * @param {import("express").Request} req
- * @param {import("express").Response} res
- */
 function getApiInfo(req, res) {
   return res.status(200).json({
     message: "Mini Shop Backend API is running.",
@@ -29,12 +23,6 @@ function getApiInfo(req, res) {
   });
 }
 
-/**
- * Returns application health status.
- *
- * @param {import("express").Request} req
- * @param {import("express").Response} res
- */
 function getHealth(req, res) {
   return res.status(200).json({
     status: "ok"

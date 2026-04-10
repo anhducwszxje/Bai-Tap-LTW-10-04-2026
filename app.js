@@ -24,26 +24,12 @@ app.use("/api/products", productRoute);
 app.use("/api/cart", cartRoute);
 app.use("/api/admin", adminRoute);
 
-/**
- * Handles unknown routes.
- *
- * @param {import("express").Request} req
- * @param {import("express").Response} res
- */
 function notFoundHandler(req, res) {
   return res.status(404).json({
     message: "Route not found."
   });
 }
 
-/**
- * Handles unhandled runtime errors.
- *
- * @param {Error} err
- * @param {import("express").Request} req
- * @param {import("express").Response} res
- * @param {import("express").NextFunction} next
- */
 function errorHandler(err, req, res, next) {
   console.error("Unhandled error:", err);
 

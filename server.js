@@ -1,6 +1,3 @@
-/**
- * Entry point for the Mini Shop server.
- */
 const app = require("./app");
 
 const PORT = process.env.PORT || 3000;

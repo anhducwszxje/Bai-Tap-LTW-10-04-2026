@@ -1,11 +1,5 @@
 const products = require("../data/products.data");
 
-/**
- * Ensures the session cart has a valid in-memory array.
- *
- * @param {import("express-session").Session & { cart?: Array<{ productId: number, quantity: number }> }} session
- * @returns {Array<{ productId: number, quantity: number }>}
- */
 function ensureCart(session) {
   if (!Array.isArray(session.cart)) {
     session.cart = [];
@@ -14,12 +8,6 @@ function ensureCart(session) {
   return session.cart;
 }
 
-/**
- * Builds cart output with product details and totals.
- *
- * @param {Array<{ productId: number, quantity: number }>} cart
- * @returns {{ items: Array<{ productId: number, name: string, price: number, quantity: number, subtotal: number }>, totalItems: number, totalAmount: number }}
- */
 function buildCartResponse(cart) {
   const items = cart
     .map((entry) => {
@@ -49,12 +37,6 @@ function buildCartResponse(cart) {
   };
 }
 
-/**
- * Returns current user's cart.
- *
- * @param {import("express").Request} req
- * @param {import("express").Response} res
- */
 function getCart(req, res) {
   if (!req.session) {
     return res.status(500).json({
@@ -69,12 +51,6 @@ function getCart(req, res) {
   });
 }
 
-/**
- * Adds a product to current session cart.
- *
- * @param {import("express").Request} req
- * @param {import("express").Response} res
- */
 function addItemToCart(req, res) {
   if (!req.session) {
     return res.status(500).json({
@@ -126,12 +102,6 @@ function addItemToCart(req, res) {
   });
 }
 
-/**
- * Removes a product from current session cart.
- *
- * @param {import("express").Request} req
- * @param {import("express").Response} res
- */
 function removeItemFromCart(req, res) {
   if (!req.session) {
     return res.status(500).json({

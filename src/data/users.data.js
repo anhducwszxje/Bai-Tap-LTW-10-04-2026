@@ -1,7 +1,3 @@
-/**
- * Demo users for session-based authentication.
- * Replace this with a real database and hashed passwords in production.
- */
 module.exports = [
   {
     id: 1,

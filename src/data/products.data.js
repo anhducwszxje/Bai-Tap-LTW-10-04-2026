@@ -1,6 +1,3 @@
-/**
- * In-memory product catalog for API demonstration.
- */
 module.exports = [
   {
     id: 1,

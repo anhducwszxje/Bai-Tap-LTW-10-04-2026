@@ -1,11 +1,5 @@
 const ALLOWED_THEMES = new Set(["light", "dark"]);
 
-/**
- * Resolves a safe redirect destination from request referer.
- *
- * @param {import("express").Request} req
- * @returns {string}
- */
 function getSafeRedirectTarget(req) {
   const referer = req.headers.referer;
 
@@ -26,12 +20,6 @@ function getSafeRedirectTarget(req) {
   }
 }
 
-/**
- * Updates theme cookie with validated values and redirects back.
- *
- * @param {import("express").Request} req
- * @param {import("express").Response} res
- */
 function setTheme(req, res) {
   const requestedTheme = req.params ? req.params.theme : "";
 

@@ -1,10 +1,3 @@
-/**
- * Allows only admin users to access protected resources.
- *
- * @param {import("express").Request} req
- * @param {import("express").Response} res
- * @param {import("express").NextFunction} next
- */
 function adminMiddleware(req, res, next) {
   const role = req.session && req.session.user ? req.session.user.role : null;
 

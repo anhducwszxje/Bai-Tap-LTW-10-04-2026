@@ -1,11 +1,5 @@
 const products = require("../data/products.data");
 
-/**
- * Returns admin dashboard metrics.
- *
- * @param {import("express").Request} req
- * @param {import("express").Response} res
- */
 function getDashboard(req, res) {
   const totalProducts = products.length;
   const totalStock = products.reduce((sum, product) => sum + product.stock, 0);

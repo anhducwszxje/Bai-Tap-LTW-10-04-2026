@@ -1,21 +1,9 @@
 const users = require("../data/users.data");
 
-/**
- * Converts unknown input into a trimmed string.
- *
- * @param {unknown} rawValue
- * @returns {string}
- */
 function normalizeText(rawValue) {
   return typeof rawValue === "string" ? rawValue.trim() : "";
 }
 
-/**
- * Returns authenticated session user information.
- *
- * @param {import("express").Request} req
- * @param {import("express").Response} res
- */
 function getCurrentUser(req, res) {
   if (!req.session || !req.session.user) {
     return res.status(401).json({
@@ -32,12 +20,6 @@ function getCurrentUser(req, res) {
   });
 }
 
-/**
- * Authenticates user credentials and creates a session.
- *
- * @param {import("express").Request} req
- * @param {import("express").Response} res
- */
 function login(req, res) {
   const username = normalizeText(req.body ? req.body.username : "");
   const password = normalizeText(req.body ? req.body.password : "");
@@ -88,12 +70,6 @@ function login(req, res) {
   });
 }
 
-/**
- * Destroys active session and logs current user out.
- *
- * @param {import("express").Request} req
- * @param {import("express").Response} res
- */
 function logout(req, res) {
   if (!req.session) {
     return res.status(200).json({

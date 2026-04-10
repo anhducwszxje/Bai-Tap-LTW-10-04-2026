@@ -1,11 +1,5 @@
 const products = require("../data/products.data");
 
-/**
- * Parses a query value into a valid number.
- *
- * @param {unknown} rawValue
- * @returns {number|null}
- */
 function parseOptionalNumber(rawValue) {
   if (rawValue === undefined || rawValue === null || rawValue === "") {
     return null;
@@ -15,12 +9,6 @@ function parseOptionalNumber(rawValue) {
   return Number.isFinite(parsed) ? parsed : null;
 }
 
-/**
- * Returns a list of products with optional filters.
- *
- * @param {import("express").Request} req
- * @param {import("express").Response} res
- */
 function getProducts(req, res) {
   const search = typeof req.query.search === "string" ? req.query.search.trim().toLowerCase() : "";
   const minPrice = parseOptionalNumber(req.query.minPrice);
@@ -50,12 +38,6 @@ function getProducts(req, res) {
   });
 }
 
-/**
- * Returns details for a single product.
- *
- * @param {import("express").Request} req
- * @param {import("express").Response} res
- */
 function getProductById(req, res) {
   const productId = Number.parseInt(req.params.productId, 10);
 

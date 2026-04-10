@@ -1,9 +1,3 @@
-/**
- * Renders the profile page and tracks profile visit count in session.
- *
- * @param {import("express").Request} req
- * @param {import("express").Response} res
- */
 function getProfile(req, res) {
   if (!req.session || !req.session.username) {
     return res.redirect("/login");

@@ -1,6 +1,3 @@
-/**
- * @type {import("express-session").SessionOptions}
- */
 const sessionConfig = {
   secret: process.env.SESSION_SECRET || "mini-shop-session-secret",
   resave: false,
