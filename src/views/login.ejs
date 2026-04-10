@@ -1,0 +1,14 @@
+<section class="card narrow">
+  <h2>Đăng nhập</h2>
+
+  <% if (error) { %>
+    <p class="alert"><%= error %></p>
+  <% } %>
+
+  <form class="stack" action="/login" method="POST" novalidate>
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text" autocomplete="username" />
+
+    <button class="button" type="submit">Đăng nhập</button>
+  </form>
+</section>

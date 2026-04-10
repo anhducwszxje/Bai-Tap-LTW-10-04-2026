@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/css/theme.css" />
+  </head>
+  <body class="app theme-<%= theme %>">
+    <% const isAuthenticated = typeof username === "string" && username.length > 0; %>
+
+    <header class="site-header">
+      <div class="container header-wrap">
+        <a class="brand" href="/">Mini Shop</a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="/">Trang chủ</a>
+          <% if (isAuthenticated) { %>
+            <a href="/profile">Trang cá nhân</a>
+            <a href="/logout">Đăng xuất</a>
+          <% } else { %>
+            <a href="/login">Đăng nhập</a>
+          <% } %>
+        </nav>
+
+        <div class="theme-switch" aria-label="Theme switcher">
+          <a class="theme-pill <%= theme === 'light' ? 'active' : '' %>" href="/set-theme/light">Light</a>
+          <a class="theme-pill <%= theme === 'dark' ? 'active' : '' %>" href="/set-theme/dark">Dark</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container page-content">
+      <%- include(contentView) %>
+    </main>
+  </body>
+</html>

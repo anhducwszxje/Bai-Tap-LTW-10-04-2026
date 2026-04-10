@@ -1,0 +1,11 @@
+<section class="card">
+  <h2>Trang chủ</h2>
+
+  <% if (username) { %>
+    <p>Xin chào, <strong><%= username %></strong>.</p>
+    <p>Chúc bạn mua sắm vui vẻ tại Mini Shop.</p>
+  <% } else { %>
+    <p>Bạn chưa đăng nhập.</p>
+    <a class="button" href="/login">Đăng nhập ngay</a>
+  <% } %>
+</section>

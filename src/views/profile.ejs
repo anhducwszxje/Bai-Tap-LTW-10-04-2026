@@ -1,0 +1,10 @@
+<section class="card">
+  <h2>Trang cá nhân</h2>
+
+  <p>Xin chào, <strong><%= username %></strong>.</p>
+  <p>
+    Thời điểm đăng nhập:
+    <strong><%= loginTime ? new Date(loginTime).toLocaleString("vi-VN") : "Không xác định" %></strong>
+  </p>
+  <p>Số lần vào trang cá nhân trong phiên hiện tại: <strong><%= visitCount %></strong></p>
+</section>

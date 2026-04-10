@@ -1,0 +1,17 @@
+# Dependencies (can be restored with npm install)
+node_modules/
+
+# NPM/Yarn logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files (usually local secrets/config)
+.env
+.env.*
+!.env.example
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
